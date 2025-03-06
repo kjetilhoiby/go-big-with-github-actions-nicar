@@ -54,6 +54,12 @@ jobs:
       - name: Install dependencies
         run: npm install --prefix site
 
+      - name: Download data
+        uses: actions/download-artifact@v4
+        with:
+          name: data
+          path: site/src/data/
+
       - name: Build
         run: npm run build --prefix site
 
